@@ -11,6 +11,14 @@
         <h1>Accéder à la Boutique</h1>
     </a>
 
+    {% if user.is_authenticated %}
+        Bien le bonjour {{ user.username }}
+        <a href="{% url 'logout' %}">Se déconnecter</a>
+    {% else %}
+    <a href="{% url 'login' %}">Connexion</a>
+    <a href="{% url 'signup' %}">S'inscrire</a>
+    {% endif %}
+
     {% block content %}
     {% endblock %}
     

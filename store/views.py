@@ -1,5 +1,3 @@
-from venv import create
-from django.http import HttpResponse
 from django.urls import reverse
 from django.shortcuts import get_object_or_404, redirect, render
 from store.models import Order, Product, Cart

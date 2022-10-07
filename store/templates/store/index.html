@@ -3,8 +3,8 @@
 {% block content %}
 <h1>Je suis un bloc</h1>
 
+<div class="FlexContainer">
 {% for product in products %}
-<div id="portfolio">
     <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
@@ -21,7 +21,6 @@
           </div>
         </div>
     </div>
-</div>
     {% endfor %}
-
+  </div>
 {% endblock %}

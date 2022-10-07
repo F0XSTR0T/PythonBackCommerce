@@ -1,3 +1,6 @@
+<!-- pour insérer le css et le js 
+a compléter avec le fichier settings.py dans l'app source 
+et biensur la balise link dans le <head> -->
 {% load static %}
 <!DOCTYPE html>
 <html lang="fr">
@@ -7,12 +10,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Boutique</title>
     <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="{% static 'flipcard.css' %}">
 </head>
 <body>
+    <!-- la redirection de la balise a pointe vers l'url qui porte le nom de : 'index' et qui est défini dans urls.py -->
     <a href="{% url 'index' %}">
         <h1>Accéder à la Boutique</h1>
     </a>
-
+    <!-- tous les blocs de python importés dans un fihier HTML doivent être refermés
+         exemple : 
+        Pour l'insertion de variables définies dans les modèles on utilisera {{ variable.nom }} entre double {} -->
     {% if user.is_authenticated %}
         Bien le bonjour {{ user.username }}
         <a href="{% url 'logout' %}">Se déconnecter</a>

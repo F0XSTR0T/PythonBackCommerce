@@ -20,6 +20,9 @@ from accounts.views import signup, logout_user, login_user
 from store.views import delete_cart, index, product_detail, add_to_cart, cart, delete_cart
 from Shop import settings
 
+
+# Ne pas oublier d'affecter un nom à l'url pour pouvoir l'appeler dans les fichiers html
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('signup/', signup, name='signup'),
@@ -32,3 +35,5 @@ urlpatterns = [
     path('product/<str:slug>/add_to_cart', add_to_cart, name='add_to_cart'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+# le rajout static au dessus permet d'afficher les images des produits 
+# Mémo pip install pillow pour les images
